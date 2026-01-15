@@ -1,3 +1,5 @@
+"use client";
+
 import {
   SiTypescript,
   SiJavascript,
@@ -44,9 +46,9 @@ export const techStackList = [
 ];
 
 const techStackDetect = (tech: string) => {
-  return techStackList.find((t) => {
-    return tech.toLowerCase().trim() === t.tech.toLowerCase().trim();
-  });
+  return techStackList.find(
+    (t) => tech.toLowerCase().trim() === t.tech.toLowerCase().trim()
+  );
 };
 
 export default function ProjectStack({
@@ -60,9 +62,9 @@ export default function ProjectStack({
 
   return (
     <span
-      className={`w-10 h-fullaspect-square font-semibold text-slate-500 text-3xl flex items-center gap-2 ${className}`}
+      className={`w-10 aspect-square font-semibold text-slate-500 text-3xl flex items-center gap-2 ${className}`}
     >
-      {techResult ? techResult.icon : <></>}
+      {techResult ? techResult.icon : null}
     </span>
   );
 }
