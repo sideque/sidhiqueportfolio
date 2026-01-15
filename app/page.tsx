@@ -30,7 +30,6 @@ const HomePage = async () => {
                   <strong>
                     <AnimatedRoleText />
                   </strong>
-                  .
                 </p>
               </div>
               <div className="flex gap-6">
