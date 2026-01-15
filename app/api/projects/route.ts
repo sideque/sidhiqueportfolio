@@ -1,14 +1,52 @@
-import connectMongoDB from "../../../backend/db/mongodb"
-import Project from "../../../backend/models/project";
 import { NextResponse } from "next/server";
+import connectMongoDB from "@backend/db/mongodb";
+import Project from "@backend/models/project";
 
+/**
+ * GET /api/projects
+ * Get all projects
+ */
+export async function GET() {
+  try {
+    await connectMongoDB();
+
+    const projects = await Project.find().sort({ createdAt: -1 });
+
+    // IMPORTANT: return ARRAY (not { projects })
+    return NextResponse.json(projects, { status: 200 });
+  } catch (error) {
+    console.error("GET /api/projects error:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch projects" },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * POST /api/projects
+ * Create new project
+ */
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { src, alt, title, desc, website, github, slug, tag = [], tech = [] } = body;
+    const {
+      src,
+      alt,
+      title,
+      desc,
+      website,
+      github,
+      slug,
+      tag = [],
+      tech = [],
+    } = body;
 
     if (!title || !slug) {
-      return NextResponse.json({ error: "Missing required fields: title and slug" }, { status: 400 });
+      return NextResponse.json(
+        { error: "title and slug are required" },
+        { status: 400 }
+      );
     }
 
     await connectMongoDB();
@@ -25,24 +63,21 @@ export async function POST(request: Request) {
       tech,
     });
 
-    return NextResponse.json({ message: "Project created", project }, { status: 201 });
+    return NextResponse.json(project, { status: 201 });
   } catch (error: any) {
     console.error("POST /api/projects error:", error);
-    const message = error?.message || "Failed to create project";
-    const body = process.env.NODE_ENV === "production" ? { error: "Failed to create project" } : { error: message };
-    return NextResponse.json(body, { status: 500 });
+
+    // duplicate slug error
+    if (error?.code === 11000) {
+      return NextResponse.json(
+        { error: "Project with this slug already exists" },
+        { status: 409 }
+      );
+    }
+
+    return NextResponse.json(
+      { error: "Failed to create project" },
+      { status: 500 }
+    );
   }
 }
-
-export async function GET() {
-  try {
-    await connectMongoDB();
-    const projects = await Project.find().sort({ createdAt: -1 });
-    return NextResponse.json({ projects }, { status: 200 });
-  } catch (error: any) {
-    console.error("GET /api/projects error:", error);
-    const message = error?.message || "Failed to fetch projects";
-    const body = process.env.NODE_ENV === "production" ? { error: "Failed to fetch projects" } : { error: message };
-    return NextResponse.json(body, { status: 500 });
-  }
-} 
