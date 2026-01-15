@@ -34,7 +34,7 @@ const HomePage = async () => {
             <div className="relative w-full max-w-[400px] lg:max-w-[450px] xl:max-w-[550px] aspect-square flex flex-col items-end rounded-lg overflow-hidden">
               <Image
                 src="/images/pages/about/Home.jpg" // Home page Image
-                alt="I am Sidhiqueeee"
+                alt="I am Sidhiqueeees"
               />
               <ImageCredits
                 phrase="Image source in"
