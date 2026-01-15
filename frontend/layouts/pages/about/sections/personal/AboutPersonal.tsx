@@ -5,6 +5,7 @@ import { Paragraph } from "@frontend/components/ui/Paragraph";
 import SectionHeading from "@frontend/components/SectionHeading";
 import { Image } from "@frontend/components/ui/Image";
 import Link from "@node_modules/next/link";
+import { console } from "inspector";
 
 const age = ageCalc("2004-07-15");
 
@@ -54,4 +55,8 @@ export default function AboutPersonal() {
       </div>
     </Section>
   );
+}
+
+function ney(){
+  console.log("hey")
 }
