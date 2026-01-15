@@ -1,23 +1,22 @@
 import { Metadata } from "next";
-import { useFetch } from "@backend/hooks/useFetch";
+import { fetchData } from "@backend/hooks/fetchData";
 import Projects from "@frontend/layouts/pages/project/Projects";
 import BackToTop from "@frontend/components/buttons/BackToTop";
 import Footer from "@frontend/layouts/footer/Footer";
 import PageWrapper from "@frontend/layouts/common/PageWrapper";
+import { ProjectType } from "@shared/types";
 
 export const metadata: Metadata = {
   title: "Projects",
 };
 
 export default async function ProjectsPage() {
-  // ✅ FETCH DATA HERE (SERVER COMPONENT)
-  const projects = await useFetch("/api/projects");
+  const projects: ProjectType[] = await fetchData("/api/projects");
 
   return (
     <>
-      <BackToTop id={"#projects"} />
+      <BackToTop id="#projects" />
       <PageWrapper id="projects">
-        {/* ✅ PASS DATA AS PROP */}
         <Projects projects={projects} />
       </PageWrapper>
       <Footer />
