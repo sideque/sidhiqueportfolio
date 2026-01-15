@@ -55,7 +55,7 @@ export default function ContactsPage() {
             />
             <Grid className="w-max grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
-                href="https://drive.google.com/file/d/1CZlNfJm_M-_OGxNFEteoEfe-g-Q19FoJ/view" //CV
+                href="/images/pages/about/SidhqiueCV1.pdf" //CV
                 download
                 target="_blank"
                 className={`${buttonVariants({ variant: "ghost" })} hover:scale-110`}
