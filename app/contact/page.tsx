@@ -38,7 +38,7 @@ export default function ContactsPage() {
                 <FaGithub />
               </Link>
               <Link
-                href="mailto:i am Sidhique <xidhique@gmail.com>"
+                href="mailto:xidhique@gmail.com"
                 target="_blank"
                 className={`${buttonVariants({ variant: "icon" })} bg-primary text-white  hover:scale-110`}
               >
