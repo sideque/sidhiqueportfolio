@@ -2,15 +2,15 @@ import mongoose, { Schema } from "mongoose";
 
 const projectSchema = new Schema(
   {
-    src: String,
-    alt: String,
-    title: String,
-    desc: String,
-    website: String,
-    github: String,
-    slug: String,
-    tag: Array,
-    tech: Array,
+    src: { type: String },
+    alt: { type: String },
+    title: { type: String, required: true },
+    desc: { type: String },
+    website: { type: String },
+    github: { type: String },
+    slug: { type: String, required: true, unique: true },
+    tag: { type: [String], default: [] },
+    tech: { type: [String], default: [] },
   },
   {
     timestamps: true,

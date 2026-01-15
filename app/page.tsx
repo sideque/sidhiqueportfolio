@@ -28,7 +28,7 @@ const HomePage = async () => {
               </div>
               <div className="flex gap-6">
                 <GitHubBtn href="https://github.com/sideque" />
-                <EmailBtn href="mailto:I am Sidhique <xidhique@gmail.com>" />
+                <EmailBtn href="mailto:xidhique@gmail.com" />
               </div>
             </div>
             <div className="relative w-full max-w-[400px] lg:max-w-[450px] xl:max-w-[550px] aspect-square flex flex-col items-end rounded-lg overflow-hidden">
