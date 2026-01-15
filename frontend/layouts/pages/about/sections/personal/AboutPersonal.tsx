@@ -56,7 +56,3 @@ export default function AboutPersonal() {
     </Section>
   );
 }
-
-function ney(){
-  console.log("hey")
-}
