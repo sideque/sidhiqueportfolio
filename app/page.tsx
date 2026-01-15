@@ -6,8 +6,12 @@ import TechStackSlider from "@frontend/layouts/TechStackSlider";
 import { Image } from "@frontend/components/ui/Image";
 import ImageCredits from "@frontend/components/ImageCredits";
 import LifeStatus from "@frontend/components/LifeStatus";
+import TiltedCard from "@app/components/TiltedCard/TiltedCard";
+import DecryptedText from "@app/components/DecryptedText/DecryptedText";
+import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
 
 const HomePage = async () => {
+
   return (
     <Suspense fallback={<SkeletonScreenHome />}>
       <section id="home" className="container pt-32 pb-10">
@@ -23,7 +27,10 @@ const HomePage = async () => {
                 </h1>
                 <p className="text-center xl:text-left text-xl xl:text-2xl px-2 text-slate-400 font-medium">
                   Pursuing a career of being a{" "}
-                  <strong className="text-primary">software engineer</strong>.
+                  <strong>
+                    <AnimatedRoleText />
+                  </strong>
+                  .
                 </p>
               </div>
               <div className="flex gap-6">
@@ -32,10 +39,19 @@ const HomePage = async () => {
               </div>
             </div>
             <div className="relative w-full max-w-[400px] lg:max-w-[450px] xl:max-w-[550px] aspect-square flex flex-col items-end rounded-lg overflow-hidden">
-              <Image
-                src="/images/pages/about/Home.jpg" // Home page Image
-                alt="I am Sidhique"
+              <TiltedCard
+                imageSrc="/images/pages/about/Home.jpg"
+                altText="I am Sidhique"
+                containerWidth="100%"
+                containerHeight="100%"
+                imageWidth="100%"
+                imageHeight="100%"
+                rotateAmplitude={12}
+                scaleOnHover={1.1}
+                showMobileWarning={false}
+                showTooltip={false}
               />
+
               <ImageCredits
                 phrase="Image source in"
                 href="https://github.com/sideque"
