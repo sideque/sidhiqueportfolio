@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 export default async function ProjectsPage() {
   const projects = await fetchData("/api/projects");
+  console.log("Fetched projects:", projects);
 
   if (!Array.isArray(projects)) {
     return (
