@@ -4,8 +4,10 @@ import PageWrapper from "@frontend/layouts/common/PageWrapper";
 import Section from "@frontend/layouts/common/Section";
 import Footer from "@frontend/layouts/footer/Footer";
 import Link from "@node_modules/next/link";
+import Grid from "@frontend/layouts/common/Grid";
 
 import { SiAnilist, SiGmail } from "react-icons/si";
+
 import {
   FaFacebook,
   FaInstagram,
@@ -15,12 +17,14 @@ import {
   FaRedditAlien,
   FaDownload,
   FaSteam,
+  FaLinkedinIn
 } from "react-icons/fa6";
-import Grid from "@frontend/layouts/common/Grid";
+
 
 export default function ContactsPage() {
   return (
     <>
+  
       <PageWrapper id="contact">
         <Section className="w-max mx-auto space-y-12">
           {/* collaboration */}
@@ -61,6 +65,13 @@ export default function ContactsPage() {
                 className={`${buttonVariants({ variant: "ghost" })} hover:scale-110`}
               >
                 <FaDownload /> Resumé
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/sidhiee"
+                target="_blank"
+                className={`${buttonVariants({ variant: "icon" })} bg-primary text-white  hover:scale-110`}
+              >
+                <FaLinkedinIn />
               </Link>
             </Grid>
           </div>
