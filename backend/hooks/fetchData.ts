@@ -1,10 +1,7 @@
-// backend/hooks/fetchData.ts
-
 export const fetchData = async (
   url: string,
   options: RequestInit = {}
 ) => {
-  // Convert relative URL to absolute on server
   if (typeof window === "undefined" && url.startsWith("/")) {
     const base =
       process.env.NEXT_PUBLIC_BASE_URL ||
@@ -15,18 +12,21 @@ export const fetchData = async (
     url = new URL(url, base).toString();
   }
 
-  const res = await fetch(url, {
-    cache: "no-store",
-    method: "GET",
-    ...options,
-  });
+  try {
+    const res = await fetch(url, {
+      cache: "no-store",
+      method: "GET",
+      ...options,
+    });
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(
-      `Fetch failed (${res.status}): ${text || res.statusText}`
-    );
+    if (!res.ok) {
+      console.error("Fetch failed:", url, res.status);
+      return null; // ✅ DO NOT THROW
+    }
+
+    return await res.json();
+  } catch (err) {
+    console.error("Fetch error:", url, err);
+    return null; // ✅ DO NOT THROW
   }
-
-  return res.json();
 };
