@@ -13,12 +13,13 @@ export const fetchData = async (
   }
 
   try {
+    alert("fetchData called with URL: " + url); // Debugging line
     const res = await fetch(url, {
       cache: "no-store",
       method: "GET",
       ...options,
     });
-
+    console.log("Fetch response:", res); // Debugging line
     if (!res.ok) {
       console.error("Fetch failed:", url, res.status);
       return null; // ✅ DO NOT THROW
