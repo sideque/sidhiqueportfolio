@@ -10,18 +10,17 @@ import ProjectTag from "@frontend/components/project/ProjectTag";
 import ProjectStack from "@frontend/components/project/ProjectStack";
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const project = await fetchData(`/api/projects/${params.slug}`);
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const project = await fetchData(`/api/projects/${params.slug}`).catch(
+    () => null
+  );
 
   return {
-    title: project?.title || "Project",
-    description: project?.desc || "",
+    title: project?.title ?? "Project",
+    description: project?.desc ?? "",
   };
 }
+
 
 export default async function ProjectPageBySlug({
   params,
@@ -34,8 +33,11 @@ export default async function ProjectPageBySlug({
     return <div className="pt-32 text-center">Project not found</div>;
   }
 
-  const sortedTags = project.tag?.sort();
-  const sortedTechs = project.tech?.sort();
+  const sortedTags = Array.isArray(project.tag) ? [...project.tag].sort() : [];
+
+  const sortedTechs = Array.isArray(project.tech)
+    ? [...project.tech].sort()
+    : [];
 
   return (
     <>

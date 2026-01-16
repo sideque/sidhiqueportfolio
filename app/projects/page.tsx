@@ -11,7 +11,15 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const projects: ProjectType[] = await fetchData("/api/projects");
+  const projects = await fetchData("/api/projects");
+
+  if (!Array.isArray(projects)) {
+    return (
+      <PageWrapper id="projects">
+        <p className="text-center pt-32">No projects found</p>
+      </PageWrapper>
+    );
+  }
 
   return (
     <>
@@ -23,3 +31,4 @@ export default async function ProjectsPage() {
     </>
   );
 }
+
