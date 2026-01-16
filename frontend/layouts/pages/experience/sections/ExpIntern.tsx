@@ -9,7 +9,7 @@ export default function ExpIntern() {
     <Section className="grid grid-cols-1 xl:grid-cols-4 premium:grid-cols-5">
       <div className="w-full xl:col-span-2 premium:col-span-3 flex flex-col items-end order-2">
         <Image
-          src="/images/pages/experience/oc.jpg"
+          src="/images/pages/experience/oc.jpeg"
           alt="olivarez college parañaque stage"
           shape="tv"
         />
@@ -18,29 +18,44 @@ export default function ExpIntern() {
           href="https://olivarezcollege.edu.ph/"
         />
       </div>
+
       <div className="xl:col-span-2 order-1">
-        <SectionHeading name="On-The-Job Trainee" />
+        <SectionHeading name="Startup & Freelance Experience" />
         <Paragraph variant="wide">
-          I've experience my very first On-The-Job training at the Olivarez
-          College Parañaque specifically in the{" "}
+          I gained valuable{" "}
           <span className="text-primary font-semibold">
-            Department of Computer Studies
+            industry experience
+          </span>{" "}
+          as part of{" "}
+          <span className="text-primary font-semibold">
+            Emirnex Tech Solutions
           </span>
-          . There I experienced what it feels like to be part of an
-          organization. Together with my co-practicumer who are actually my
-          friends as well, we've learned so many new things especially from our
-          seniors. We handled computer assembling and dissambling, cable
-          management, using tools like BurnIn Tester to test if a computer has
-          any hardware malfunctions, malwares and more that could affect the
-          computer.
-          <br />
-          <br />
-          It may look like all we always do are things related to computer but
-          we also manage to have some fun sometimes. As we learned that
-          sometimes, you won't get along to some of the people inside the
-          organization and this can cause you stress. Other than that I'm very
-          happy to be part of the department and thank you to the seniors who've
-          taught us so many things.
+          , a{" "}
+          <span className="text-primary font-semibold">
+            Dubai-based startup freelance team
+          </span>
+          . Working in a real startup environment helped me understand{" "}
+          <span className="text-primary font-semibold">
+            professional workflows
+          </span>{" "}
+          and effective{" "}
+          <span className="text-primary font-semibold">team collaboration</span>
+          . I contributed to projects involving{" "}
+          <span className="text-primary font-semibold">
+            web development, e-commerce websites, digital marketing,
+          </span>{" "}
+          and{" "}
+          <span className="text-primary font-semibold">branding solutions</span>
+          . This experience strengthened my ability to handle{" "}
+          <span className="text-primary font-semibold">
+            client requirements
+          </span>
+          , manage tasks efficiently, and adapt to evolving project needs,
+          enhancing my{" "}
+          <span className="text-primary font-semibold">
+            technical skills, problem-solving ability,
+          </span>{" "}
+          and professional confidence.
         </Paragraph>
       </div>
     </Section>
