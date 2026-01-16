@@ -11,11 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  console.log("Loading Projects Page");
-  const projects = await fetchData("/api/projects");
-  console.log("Fetched projects:", projects);
+  const data = await fetchData("/api/projects");
+  const projects: ProjectType[] = data?.projects ?? [];
 
-  if (!Array.isArray(projects)) {
+  if (projects.length === 0) {
     return (
       <PageWrapper id="projects">
         <p className="text-center pt-32">No projects found</p>
@@ -33,4 +32,3 @@ export default async function ProjectsPage() {
     </>
   );
 }
-
