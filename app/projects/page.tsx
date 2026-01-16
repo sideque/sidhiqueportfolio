@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  alert("ProjectsPage component rendered"); // Debugging line
+  console.log("Loading Projects Page");
   const projects = await fetchData("/api/projects");
   console.log("Fetched projects:", projects);
 

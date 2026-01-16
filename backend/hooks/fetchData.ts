@@ -13,7 +13,7 @@ export const fetchData = async (
   }
 
   try {
-    alert("fetchData called with URL: " + url); // Debugging line
+    console.log("fetchData called with URL: " + url); // Debugging line
     const res = await fetch(url, {
       cache: "no-store",
       method: "GET",
