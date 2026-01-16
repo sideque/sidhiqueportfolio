@@ -9,8 +9,8 @@ import { sortDateByDescendingOrder } from "@frontend/ts/utils/sortDate";
 import Section from "@frontend/layouts/common/Section";
 import EventWrapper from "@frontend/components/EventWrapper";
 
-const renderTimeline = (timelines: TimelineType[]) => {
-  if (!timelines) return null;
+const renderTimeline = (timelines?: TimelineType[]) => {
+  if (!Array.isArray(timelines)) return null;
 
   return timelines
     .sort(sortDateByDescendingOrder)
@@ -57,6 +57,7 @@ const renderTimeline = (timelines: TimelineType[]) => {
     });
 };
 
+
 export default function Timeline() {
   const [timelines, setTimelines] = useState<TimelineType[]>([]);
 
@@ -69,8 +70,11 @@ export default function Timeline() {
   }, []);
 
   return (
-    <Section className="lg:w-max mx-auto">
-      {renderTimeline(timelines)}
-    </Section>
-  );
+  <Section className="lg:w-max mx-auto">
+    {Array.isArray(timelines) && timelines.length > 0
+      ? renderTimeline(timelines)
+      : <p className="text-center text-sm text-muted">No timeline data</p>
+    }
+  </Section>
+);
 }
