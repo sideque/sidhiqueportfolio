@@ -4,7 +4,7 @@ export const projects: ProjectType[] = [
   {
     _id: "1",
     title: "MobiVault",
-    slug: "mobivault", // ✅ lowercase
+    slug: "mobivault", 
     desc: "Mobile e-commerce website for buying and selling used smartphones.",
     src: "/images/projects/mobivault.png",
     alt: "MobiVault Project",
@@ -18,7 +18,7 @@ export const projects: ProjectType[] = [
 
   {
     _id: "2",
-    title: "MobiVault",
+    title: "MobiVault-admin",
     slug: "mobivault", 
     desc: "Mobile e-commerce website with admin dashboard for buying and selling used smartphones.",
     src: "/images/projects/mobivaultadmin.png",
@@ -27,6 +27,21 @@ export const projects: ProjectType[] = [
     tag: ["E-commerce", "Backend"],
     github: "https://www.mobivault.shop/admin/dashboard",
     website: "https://www.mobivault.shop",
+    href: "",
+    ariaLabel: ""
+  },
+
+  {
+    _id: "3",
+    title: "Shuffles",
+    slug: "shuffles", 
+    desc: "shuffles-LinkedIn.",
+    src: "/images/projects/shuffles.png",
+    alt: "MobiVault Project",
+    tech: ["Node.js", "React","express"],
+    tag: ["Frontend"],
+    github: "https://github.com/sideque/my-card-shuffles",
+    website: "https://my-card-shuffles.vercel.app/",
     href: "",
     ariaLabel: ""
   },
