@@ -5,6 +5,7 @@ import { Image } from "@frontend/components/ui/Image";
 import { Paragraph } from "@frontend/components/ui/Paragraph";
 import Grid from "@frontend/layouts/common/Grid";
 import Section from "@frontend/layouts/common/Section";
+import Magnet from "@app/components/Magnet/Magnet";
 import Link from "@node_modules/next/link";
 
 export default function AboutEducation() {
@@ -193,12 +194,14 @@ export default function AboutEducation() {
               happy to hear from you.
             </Paragraph>
           </div>
+          <Magnet padding={60} magnetStrength={6} speed={0.2}>
           <Link
             href="/contact"
             className={`${buttonVariants({ variant: "default" })} ml-auto mt-10`}
           >
             Get in touch
           </Link>
+          </Magnet>
         </div>
       </Grid>
     </Section>
