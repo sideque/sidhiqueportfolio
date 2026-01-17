@@ -1,5 +1,6 @@
 import Link from "@node_modules/next/link";
 import { buttonVariants } from "@frontend/components/ui/Button";
+import Magnet from "@app/components/Magnet/Magnet";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function VisitBtn({
@@ -10,6 +11,7 @@ export default function VisitBtn({
   className?: string;
 }) {
   return (
+    <Magnet padding={60} magnetStrength={6} speed={0.2}>
     <Link
       id="visit-button"
       href={href}
@@ -20,5 +22,6 @@ export default function VisitBtn({
       <FiExternalLink />
       visit
     </Link>
+    </Magnet>
   );
 }

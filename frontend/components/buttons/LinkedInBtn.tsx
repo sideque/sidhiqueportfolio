@@ -1,5 +1,6 @@
 import { buttonVariants } from "@frontend/components/ui/Button";
 import Link from "next/link";
+import Magnet from "@app/components/Magnet/Magnet";
 import { FaLinkedin } from "react-icons/fa6";
 
 export default function LinkedInBtn({
@@ -10,6 +11,7 @@ export default function LinkedInBtn({
     className?: string;
 }) {
     return (
+        <Magnet padding={60} magnetStrength={6} speed={0.2}>
         <Link
         href={href}
         target="_blank"
@@ -19,5 +21,6 @@ export default function LinkedInBtn({
         <FaLinkedin />
         LinkedIn
         </Link>
+        </Magnet>
     );
 }

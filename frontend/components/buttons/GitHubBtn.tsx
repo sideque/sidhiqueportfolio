@@ -1,4 +1,5 @@
 import { buttonVariants } from "@frontend/components/ui/Button";
+import Magnet from "@app/components/Magnet/Magnet";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 
@@ -10,13 +11,15 @@ export default function GitHubBtn({
   className?: string;
 }) {
   return (
-    <Link
-      href={href}
-      target="_blank"
-      className={`${buttonVariants()} !bg-github !border-github hover:!bg-github-variant hover:!border-github-variant [&>svg>path]:text-white dark:[&>svg>path]:text-white dark:text-white shadow-lg shadow-slate-400 dark:shadow-slate-800 ${className}`}
-    >
-      <FaGithub />
-      GitHub
-    </Link>
+    <Magnet padding={60} magnetStrength={6} speed={0.2}>
+      <Link
+        href={href}
+        target="_blank"
+        className={`${buttonVariants()} !bg-github ...`}
+      >
+        <FaGithub />
+        GitHub
+      </Link>
+    </Magnet>
   );
 }
