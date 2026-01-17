@@ -68,8 +68,8 @@ export default function ProjectPageBySlug({ params }: Props) {
           {/* 🔹 ACTION BUTTONS */}
           <div className="flex flex-wrap gap-4 mb-10">
             {project.github && <GitHubBtn href={project.github} />}
-            {project.website && <VisitBtn href={project.website} />}
             {project.linkedin && <LinkedInBtn href={project.linkedin} />}
+            {project.website && <VisitBtn href={project.website} />}
             <BackBtn href="/projects" />
           </div>
 
