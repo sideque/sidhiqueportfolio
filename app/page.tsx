@@ -7,6 +7,9 @@ import TechStackSlider from "@frontend/layouts/TechStackSlider";
 import LifeStatus from "@frontend/components/LifeStatus";
 import TiltedCard from "@app/components/TiltedCard/TiltedCard";
 import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
+import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";
+import Contact from "@app/contact/page";
+import About from "./about/page";
 
 const HomePage = async () => {
   return (
@@ -17,9 +20,7 @@ const HomePage = async () => {
       >
         {/* CONTENT */}
         <div className="w-full h-full relative flex flex-col justify-center lg:justify-between items-center gap-16 lg:gap-20">
-          
           <div className="w-full flex flex-col xl:flex-row items-center gap-10 lg:gap-16">
-            
             {/* TEXT */}
             <div className="relative z-10 w-full flex flex-col items-center xl:items-start gap-5 max-w-[600px] text-center xl:text-left">
               <LifeStatus status="Open to work" />
@@ -59,7 +60,19 @@ const HomePage = async () => {
 
           <TechStackSlider />
         </div>
+        {/* <ScrollFloat
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+        >
+          React Bits
+        </ScrollFloat> */}
       </section>
+
+      {/* <Contact /> */}
+      {/* <About /> */}
     </Suspense>
   );
 };
