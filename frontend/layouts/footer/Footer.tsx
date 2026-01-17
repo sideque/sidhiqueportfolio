@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
       <p className="text-center text-sm sm:text-base">
         Copyright <span className="text-xs align-text-top">&#169; </span>{" "}
-        {year.getFullYear().toString()} Moonbami. All rights reserved.
+        {year.getFullYear().toString()} Sidhique. All rights reserved.
       </p>
     </section>
   );

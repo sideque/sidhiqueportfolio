@@ -15,7 +15,7 @@ export default function AboutPersonal() {
       <div className="w-full xl:col-span-2 premium:col-span-3 flex flex-col items-end">
         <Image
           src="/images/pages/about/about.jpeg"
-          alt="Jam Moonbami"
+          alt="Sidhique"
           shape="tv"
         />
         <ImageCredits
@@ -26,7 +26,7 @@ export default function AboutPersonal() {
       <div className="xl:col-span-2 personal">
         <SectionHeading name="This is me" />
         <Paragraph variant="wide">
-          I am Jam Moonbami or{" "}
+          I am Jam L or{" "}
           <span className="text-primary font-semibold">Aboobakkar Sidhque</span>
           , a passionate{" "}
           <span className="text-primary font-semibold">{age} years old</span>{" "}

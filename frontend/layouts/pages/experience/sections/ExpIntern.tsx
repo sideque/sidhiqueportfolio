@@ -10,12 +10,12 @@ export default function ExpIntern() {
       <div className="w-full xl:col-span-2 premium:col-span-3 flex flex-col items-end order-2">
         <Image
           src="/images/pages/experience/oc.jpeg"
-          alt="olivarez college parañaque stage"
+          alt="Emirnex Tech Solutions Logo"
           shape="tv"
         />
         <ImageCredits
-          name="Olivarez College"
-          href="https://olivarezcollege.edu.ph/"
+          name="Emirnex Tech Solutions Logo"
+          href="https://www.instagram.com/emirnex.tech"
         />
       </div>
 
