@@ -1,0 +1,53 @@
+.glareHover {
+  width: var(--gh-width);
+  height: var(--gh-height);
+  background: var(--gh-bg);
+  border-radius: var(--gh-br);
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+/* glare layer */
+.glareHover::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(
+    var(--gh-angle),
+    transparent 40%,
+    var(--gh-rgba) 50%,
+    transparent 60%
+  );
+  background-size: var(--gh-size) var(--gh-size);
+  background-repeat: no-repeat;
+  background-position: -150% -150%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* content above glare */
+.glareHover > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* auto animation */
+@keyframes glareAuto {
+  from {
+    background-position: -150% -150%;
+  }
+  to {
+    background-position: 150% 150%;
+  }
+}
+
+.autoPlay::before {
+  animation: glareAuto var(--gh-duration) ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.playOnce::before {
+  animation: glareAuto var(--gh-duration) ease-in-out 1;
+}

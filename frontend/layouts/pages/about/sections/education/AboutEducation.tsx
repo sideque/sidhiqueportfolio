@@ -15,7 +15,7 @@ export default function AboutEducation() {
         <div className="flex flex-col gap-4">
           <div className="w-full flex flex-col items-end">
             <Image
-              src="/images/pages/about/schools.jpeg"
+              src="/images/pages/about/schools.jpg"
               alt="BEMUP Anjarakkandy"
               shape="tv"
             />
