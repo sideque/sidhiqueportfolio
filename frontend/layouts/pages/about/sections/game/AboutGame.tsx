@@ -10,7 +10,7 @@ export default function AboutGame() {
     <Section className="flex flex-col lg:flex-row justify-center items-center lg:text-slate-300">
       <LoopingImage imageList={gameGifList} />
       <div className="game">
-        <SectionHeading name="No Game, No Life!" />
+        <SectionHeading name="No Code, No Life!" />
         <Paragraph className="lg:text-slate-400" variant="wide">
           {/* Last but not the least, also a significant part of my life is none
           other than gaming. I have been playing video games since I was a

@@ -3,6 +3,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaGithub,
+  FaLinkedin,
   FaXTwitter,
   FaRedditAlien,
   FaYoutube,
@@ -15,6 +16,11 @@ export interface socialMediaProps {
 }
 
 export const socialMedias: socialMediaProps[] = [
+  {
+    href: "https://www.linkedin.com/in/sidhiee",
+    text: "Instagram",
+    icon: <FaLinkedin />,
+  },
   // {
   //   href: "https://anilist.co/user/Moonbami/",
   //   text: "AniList",

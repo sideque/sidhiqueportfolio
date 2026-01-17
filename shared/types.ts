@@ -24,6 +24,7 @@ export type ProjectType = {
   desc: string;
   website: string;
   github: string;
+  linkedin: string;
   slug?: string;
   tag?: string[];
   tech?: string[];

@@ -21,6 +21,7 @@ export default function Projects({ projects }: Props) {
             title={project.title}
             desc={project.desc}
             website={project.website}
+            linkedin={project.linkedin}
             github={project.github}
             tag={project.tag}
             tech={project.tech}

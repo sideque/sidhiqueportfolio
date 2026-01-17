@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import EmailBtn from "@frontend/components/buttons/EmailBtn";
 import GitHubBtn from "@frontend/components/buttons/GitHubBtn";
+import LinkedInBtn from "@frontend/components/buttons/LinkedInBtn";
 import SkeletonScreenHome from "@frontend/components/skeleton-screens/SkeletonScreenHome";
 import TechStackSlider from "@frontend/layouts/TechStackSlider";
 import LifeStatus from "@frontend/components/LifeStatus";
@@ -35,6 +36,7 @@ const HomePage = async () => {
               <div className="flex gap-6">
                 <GitHubBtn href="https://github.com/sideque" />
                 <EmailBtn href="mailto:xidhique@gmail.com" />
+                <LinkedInBtn href="https://www.linkedin.com/in/sidhiee" />
               </div>
             </div>
 
