@@ -1,6 +1,7 @@
 import SectionHeading from "@frontend/components/SectionHeading";
 import { buttonVariants } from "@frontend/components/ui/Button";
 import PageWrapper from "@frontend/layouts/common/PageWrapper";
+import Magnet from "@app/components/Magnet/Magnet";
 import Section from "@frontend/layouts/common/Section";
 import Footer from "@frontend/layouts/footer/Footer";
 import Link from "@node_modules/next/link";
@@ -34,6 +35,7 @@ export default function ContactsPage() {
               name="Let's build from here!"
             />
             <Grid className="w-max grid-cols-2 sm:grid-cols-3 gap-4">
+              <Magnet padding={60} magnetStrength={6} speed={0.2}>
               <Link
                 href="https://github.com/sideque"
                 target="_blank"
@@ -41,6 +43,8 @@ export default function ContactsPage() {
               >
                 <FaGithub />
               </Link>
+              </Magnet>
+              <Magnet padding={60} magnetStrength={6} speed={0.2}>
               <Link
                 href="mailto:xidhique@gmail.com"
                 target="_blank"
@@ -48,6 +52,7 @@ export default function ContactsPage() {
               >
                 <SiGmail />
               </Link>
+              </Magnet>
             </Grid>
           </div>
 
@@ -58,6 +63,7 @@ export default function ContactsPage() {
               name="Professional credentials"
             />
             <Grid className="w-max grid-cols-1 sm:grid-cols-2 gap-4">
+              <Magnet padding={60} magnetStrength={6} speed={0.2}>
               <Link
                 href="/images/pages/about/SidhqiueCV1.pdf" //CV
                 download
@@ -66,6 +72,8 @@ export default function ContactsPage() {
               >
                 <FaDownload /> Resumé
               </Link>
+              </Magnet>
+              <Magnet padding={60} magnetStrength={6} speed={0.2}>
               <Link
                 href="https://www.linkedin.com/in/sidhiee"
                 target="_blank"
@@ -73,6 +81,7 @@ export default function ContactsPage() {
               >
                 <FaLinkedinIn />
               </Link>
+              </Magnet>
             </Grid>
           </div>
 
@@ -90,6 +99,7 @@ export default function ContactsPage() {
               >
                 <FaFacebook />
               </Link> */}
+              <Magnet padding={60} magnetStrength={6} speed={0.2}>
               <Link
                 href="https://www.instagram.com/sidhiquee/"
                 target="_blank"
@@ -97,6 +107,7 @@ export default function ContactsPage() {
               >
                 <FaInstagram />
               </Link>
+              </Magnet>
               {/* <Link
                 href="https://twitter.com/moonbamijam"
                 target="_blank"
@@ -129,6 +140,7 @@ export default function ContactsPage() {
               >
                 <SiAnilist />
               </Link> */}
+              <Magnet padding={60} magnetStrength={6} speed={0.2}>
               <Link
                 href="https://www.youtube.com/@sidhiQuee/"
                 target="_blank"
@@ -136,6 +148,7 @@ export default function ContactsPage() {
               >
                 <FaYoutube />
               </Link>
+              </Magnet>
               {/* <Link
                 href="https://www.reddit.com/user/MoonbamiOfficial/"
                 target="_blank"

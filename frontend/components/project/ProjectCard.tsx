@@ -26,6 +26,8 @@ export default function ProjectCard({
 
   return (
     <div className="w-full h-max rounded-lg flex flex-col justify-between backdrop:blur bg-surface/80 dark:bg-dm-surface/70 hover:bg-surface dark:hover:bg-dm-surface opacity-80 hover:opacity-100 shadow hover:shadow-lg p-8 overflow-hidden group/periphs">
+      
+      {/* CARD CONTENT */}
       <Link aria-label={ariaLabel} href={href} className="cursor-pointer">
         <Image
           src={src}
@@ -35,10 +37,14 @@ export default function ProjectCard({
           size="thumbnail"
           shape="tv"
         />
+
         <h1 className="truncate text-3xl font-bold">{title}</h1>
+
         <Paragraph variant="wide" className="mb-6 line-clamp-2">
           {desc}
         </Paragraph>
+
+        {/* TAGS */}
         <div className="w-full min-h-10 lg:min-h-20 flex flex-wrap gap-1 mb-4">
           {sortedTags?.map((tagItem, index) => (
             <ProjectTag
@@ -50,7 +56,9 @@ export default function ProjectCard({
             </ProjectTag>
           ))}
         </div>
-        <div className="w-full flex gap-1 mb-4">
+
+        {/* TECH STACK */}
+        <div className="w-full flex flex-wrap gap-1 mb-6">
           {sortedTechs?.map((techItem, index) => (
             <ProjectStack
               key={index}
@@ -60,10 +68,29 @@ export default function ProjectCard({
           ))}
         </div>
       </Link>
-      <div className="w-full flex justify-between ">
-        {github && <GitHubBtn href={github.toString()} />}
-        {linkedin && <LinkedInBtn href={linkedin.toString()} />}
-        {website && <VisitBtn href={website.toString() } />}
+
+      {/* RESPONSIVE BUTTONS */}
+      <div className="w-full flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
+        {github && (
+          <GitHubBtn
+            href={github.toString()}
+            className="w-full sm:w-auto"
+          />
+        )}
+
+        {linkedin && (
+          <LinkedInBtn
+            href={linkedin.toString()}
+            className="w-full sm:w-auto"
+          />
+        )}
+
+        {website && (
+          <VisitBtn
+            href={website.toString()}
+            className="w-full sm:w-auto"
+          />
+        )}
       </div>
     </div>
   );

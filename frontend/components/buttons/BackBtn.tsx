@@ -1,9 +1,11 @@
 import { buttonVariants } from "@frontend/components/ui/Button";
+import Magnet from "@app/components/Magnet/Magnet";
 import Link from "next/link";
 import { FaBackwardStep } from "react-icons/fa6";
 
 export default function BackBtn({ href }: { href: string }) {
   return (
+    <Magnet padding={60} magnetStrength={6} speed={0.2}>
     <Link
       href={href}
       className={`${buttonVariants({ variant: "ghost" })} [&>svg>path]:text-black [&>svg>path]:dark:text-white  [&>svg>path]:hover:text-white [&>svg>path]:dark:hover:text-black text-black hover:text-white dark:hover:text-black`}
@@ -11,5 +13,6 @@ export default function BackBtn({ href }: { href: string }) {
       <FaBackwardStep />
       back
     </Link>
+    </Magnet>
   );
 }
