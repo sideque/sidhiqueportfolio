@@ -11,3 +11,317 @@
   position: absolute;
   inset: 0;
 }
+
+/* Fish Container */
+.fish-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual Fish */
+.fish {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: swim linear infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+}
+
+.fish:hover {
+  transform: scale(1.3) translateY(-10px);
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.9));
+}
+
+/* Fish SVG */
+.fish svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Swimming Animation */
+@keyframes swim {
+  0% {
+    transform: translateX(-100px) translateY(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(0);
+  }
+}
+
+/* Reverse direction for some fish */
+.fish.reverse {
+  animation: swimReverse linear infinite;
+}
+
+@keyframes swimReverse {
+  0% {
+    transform: translateX(calc(100vw + 100px)) translateY(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(-100px) translateY(0) scaleX(-1);
+  }
+}
+
+/* Fish variations - different sizes, speeds, and positions */
+.fish:nth-child(1) {
+  top: 15%;
+  animation-duration: 25s;
+  animation-delay: 0s;
+}
+
+.fish:nth-child(2) {
+  top: 35%;
+  width: 45px;
+  height: 22px;
+  animation-duration: 30s;
+  animation-delay: 5s;
+}
+
+.fish:nth-child(3) {
+  top: 55%;
+  width: 70px;
+  height: 35px;
+  animation-duration: 20s;
+  animation-delay: 10s;
+}
+
+.fish:nth-child(4) {
+  top: 75%;
+  width: 50px;
+  height: 25px;
+  animation-duration: 28s;
+  animation-delay: 3s;
+}
+
+.fish:nth-child(5) {
+  top: 25%;
+  width: 55px;
+  height: 28px;
+  animation-duration: 32s;
+  animation-delay: 8s;
+}
+
+.fish:nth-child(6) {
+  top: 65%;
+  width: 65px;
+  height: 32px;
+  animation-duration: 22s;
+  animation-delay: 15s;
+}
+
+/* Reverse swimming fish */
+.fish.reverse:nth-child(7) {
+  top: 20%;
+  width: 58px;
+  height: 29px;
+  animation-duration: 27s;
+  animation-delay: 2s;
+}
+
+.fish.reverse:nth-child(8) {
+  top: 45%;
+  width: 48px;
+  height: 24px;
+  animation-duration: 29s;
+  animation-delay: 7s;
+}
+
+.fish.reverse:nth-child(9) {
+  top: 80%;
+  width: 62px;
+  height: 31px;
+  animation-duration: 24s;
+  animation-delay: 12s;
+}
+
+.fish.reverse:nth-child(10) {
+  top: 40%;
+  width: 52px;
+  height: 26px;
+  animation-duration: 26s;
+  animation-delay: 18s;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .fish {
+    width: 40px;
+    height: 20px;
+  }
+
+  .fish:nth-child(2) {
+    width: 32px;
+    height: 16px;
+  }
+
+  .fish:nth-child(3) {
+    width: 50px;
+    height: 25px;
+  }
+
+  .fish:nth-child(4) {
+    width: 35px;
+    height: 18px;
+  }
+
+  .fish:nth-child(5) {
+    width: 38px;
+    height: 19px;
+  }
+
+  .fish:nth-child(6) {
+    width: 45px;
+    height: 22px;
+  }
+
+  .fish.reverse:nth-child(7) {
+    width: 40px;
+    height: 20px;
+  }
+
+  .fish.reverse:nth-child(8) {
+    width: 34px;
+    height: 17px;
+  }
+
+  .fish.reverse:nth-child(9) {
+    width: 43px;
+    height: 21px;
+  }
+
+  .fish.reverse:nth-child(10) {
+    width: 36px;
+    height: 18px;
+  }
+
+  .fish:hover {
+    transform: scale(1.2) translateY(-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .fish {
+    width: 30px;
+    height: 15px;
+  }
+
+  .fish:nth-child(2) {
+    width: 25px;
+    height: 12px;
+  }
+
+  .fish:nth-child(3) {
+    width: 38px;
+    height: 19px;
+  }
+
+  .fish:nth-child(4) {
+    width: 28px;
+    height: 14px;
+  }
+
+  .fish:nth-child(5) {
+    width: 30px;
+    height: 15px;
+  }
+
+  .fish:nth-child(6) {
+    width: 35px;
+    height: 17px;
+  }
+
+  .fish.reverse:nth-child(7) {
+    width: 32px;
+    height: 16px;
+  }
+
+  .fish.reverse:nth-child(8) {
+    width: 27px;
+    height: 13px;
+  }
+
+  .fish.reverse:nth-child(9) {
+    width: 34px;
+    height: 17px;
+  }
+
+  .fish.reverse:nth-child(10) {
+    width: 29px;
+    height: 14px;
+  }
+
+  .fish:hover {
+    transform: scale(1.15) translateY(-5px);
+  }
+
+  /* Adjust positions for smaller screens */
+  .fish:nth-child(1) {
+    top: 12%;
+  }
+
+  .fish:nth-child(2) {
+    top: 30%;
+  }
+
+  .fish:nth-child(3) {
+    top: 50%;
+  }
+
+  .fish:nth-child(4) {
+    top: 70%;
+  }
+
+  .fish:nth-child(5) {
+    top: 22%;
+  }
+
+  .fish:nth-child(6) {
+    top: 62%;
+  }
+
+  .fish.reverse:nth-child(7) {
+    top: 18%;
+  }
+
+  .fish.reverse:nth-child(8) {
+    top: 42%;
+  }
+
+  .fish.reverse:nth-child(9) {
+    top: 78%;
+  }
+
+  .fish.reverse:nth-child(10) {
+    top: 38%;
+  }
+}
+
+/* Add subtle floating effect on hover */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.fish:hover {
+  animation-play-state: paused;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .fish {
+    animation-duration: 60s;
+  }
+  
+  .fish:hover {
+    transform: scale(1.1);
+  }
+}

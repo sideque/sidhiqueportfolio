@@ -12,6 +12,7 @@ import Anchor from "../../components/header/Anchor";
 import useHeader from "@frontend/hooks/useHeader";
 import LoadingSpinner from "@frontend/components/LoadingSpinner";
 import LightRays from "@app/components/LightRays/LightRays";
+import FishContainer from "@app/components/LightRays/FishContainer"
 import RotatingBrand from "../../components/header/RotatingBrand";
 
 export default function Header() {
@@ -23,16 +24,9 @@ export default function Header() {
   return (
     <>
       {/* 🔹 FULL SCREEN LightRays BACKGROUND */}
-      <div
-        style={{
-          position: "fixed",
-          inset: 0,
-          width: "100vw",
-          height: "100vh",
-          zIndex: 0,
-          pointerEvents: "none",
-        }}
-      >
+       <div style={{ position: 'fixed', inset: 0, background: '#001a33' }}>
+      {/* Light Rays */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#00ffff"
@@ -43,9 +37,19 @@ export default function Header() {
           mouseInfluence={0.1}
           noiseAmount={0.1}
           distortion={0.05}
-          className="custom-rays"
         />
       </div>
+
+      {/* Fish */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 2 }}>
+        <FishContainer />
+      </div>
+
+      {/* Your Content */}
+      <div style={{ position: 'relative', zIndex: 3 }}>
+        {/* Add your content here */}
+      </div>
+    </div>
 
       {/* 🔹 Header background blur bar */}
       <div className="w-full h-[80px] z-[1000] fixed top-0 bg-surface/80 dark:bg-dm-surface-dark/90 backdrop-blur shadow"></div>
