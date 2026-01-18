@@ -11,27 +11,54 @@ import Dropdown from "../../components/header/Dropdown";
 import Anchor from "../../components/header/Anchor";
 import useHeader from "@frontend/hooks/useHeader";
 import LoadingSpinner from "@frontend/components/LoadingSpinner";
+import LightRays from "@app/components/LightRays/LightRays";
 import RotatingBrand from "../../components/header/RotatingBrand";
 
 export default function Header() {
   const { isLinkActive, isMenuActive, dropdown, toggleMenu } = useHeader();
-
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
   return (
     <>
+      {/* 🔹 FULL SCREEN LightRays BACKGROUND */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.4}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
+
+      {/* 🔹 Header background blur bar */}
       <div className="w-full h-[80px] z-[1000] fixed top-0 bg-surface/80 dark:bg-dm-surface-dark/90 backdrop-blur shadow"></div>
+      {/* 🔹 Header Content */}
       <header className="container h-[80px] w-full z-[2000] fixed top-0 left-[50%] translate-x-[-50%] flex justify-between items-center lg:gap-5">
         <RotatingBrand texts={headerWordList} />
         <nav className="w-full flex justify-between lg:justify-end items-center gap-2">
           <ul role="nav-links-wrapper" className="hidden lg:flex font-semibold">
             {NavLinks.map(({ name, path }, id: number) => (
               <Anchor
+                key={id}
                 href={path}
                 ariaLabel={name}
-                key={id}
                 isLinkActive={() => isLinkActive(path)}
                 name={name}
               />
@@ -51,13 +78,17 @@ export default function Header() {
             >
               {isMenuActive ? <FaBarsStaggered /> : <FaBars />}
               <Dropdown
-                className={`top-[80px] translate-x-6 md:translate-x-0 ${isMenuActive ? "opacity-100 visible translate-y-2" : "opacity-0 invisible -translate-y-2"}`}
+                className={`top-[80px] translate-x-6 md:translate-x-0 ${
+                  isMenuActive
+                    ? "opacity-100 visible translate-y-2"
+                    : "opacity-0 invisible -translate-y-2"
+                }`}
               >
                 {NavLinks.map(({ name, path }, id: number) => (
                   <Anchor
+                    key={id}
                     href={path}
                     ariaLabel={name}
-                    key={id}
                     isLinkActive={() => isLinkActive(path)}
                     name={name}
                   />
@@ -71,14 +102,17 @@ export default function Header() {
               className="flex lg:hidden"
             />
           )}
+
           <ThemeSwitchBtn isMenuActive={isMenuActive} />
         </nav>
       </header>
+      
+      {/* 🔹 Screen dimmer (mobile menu) */}
       <div
         className={`screen-dimmer ${
           isMenuActive ? "bg-black/80 dark:bg-black/70" : "invisible"
         } block lg:hidden backdrop-blur-sm w-full h-full fixed top-0 z-[1010]`}
-      ></div>
+      />
     </>
   );
 }

@@ -10,13 +10,15 @@ import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
 import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";
 import Contact from "@app/contact/page";
 import About from "./about/page";
+import LightRays from "./components/LightRays/LightRays";
 
 const HomePage = async () => {
   return (
     <Suspense fallback={<SkeletonScreenHome />}>
+      {/* 🔹 HOME SECTION */}
       <section
         id="home"
-        className="container pt-24 sm:pt-28 lg:pt-32 pb-10 relative overflow-hidden"
+        className="container pt-24 sm:pt-28 lg:pt-32 pb-10 relative z-10 overflow-hidden min-h-screen"
       >
         {/* CONTENT */}
         <div className="w-full h-full relative flex flex-col justify-center lg:justify-between items-center gap-16 lg:gap-20">
@@ -60,7 +62,10 @@ const HomePage = async () => {
 
           <TechStackSlider />
         </div>
-        {/* <ScrollFloat
+
+        {/* Optional Scroll Animation */}
+        {/* 
+        <ScrollFloat
           animationDuration={1}
           ease="back.inOut(2)"
           scrollStart="center bottom+=50%"
@@ -68,7 +73,8 @@ const HomePage = async () => {
           stagger={0.03}
         >
           React Bits
-        </ScrollFloat> */}
+        </ScrollFloat>
+        */}
       </section>
 
       {/* <Contact /> */}
