@@ -10,7 +10,6 @@ import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
 import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";
 import Contact from "@app/contact/page";
 import About from "./about/page";
-import LightRays from "./components/LightRays/LightRays";
 
 const HomePage = async () => {
   return (

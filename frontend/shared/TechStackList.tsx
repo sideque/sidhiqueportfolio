@@ -5,12 +5,13 @@ import {
   SiExpress,
   SiMongodb,
   SiPnpm,
-  SiPython,
   SiReact,
-  SiSass,
   SiVite,
   SiAdobephotoshop,
-  SiKrita,
+  SiFirebase,
+  SiGodaddy,
+  SiFigma,
+  SiGithub,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaCss3Alt, FaNodeJs } from "react-icons/fa";
@@ -51,7 +52,7 @@ export const techStackList = [
     position: 8,
   },
   {
-    icon: <SiPython />,
+    icon: <SiFirebase />,
     position: 9,
   },
   {
@@ -59,7 +60,7 @@ export const techStackList = [
     position: 10,
   },
   {
-    icon: <SiSass />,
+    icon: <SiGodaddy />,
     position: 11,
   },
   {
@@ -79,11 +80,11 @@ export const techStackList = [
     position: 15,
   },
   {
-    icon: <SiAdobephotoshop />,
+    icon: <SiGithub />,
     position: 16,
   },
   {
-    icon: <SiKrita />,
+    icon: <SiFigma />,
     position: 17,
   },
 ];

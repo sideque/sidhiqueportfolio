@@ -15,6 +15,11 @@ import {
   SiKrita,
   SiDjango,
   SiPhp,
+  SiFigma,
+  SiGithub,
+  SiGodaddy,
+  SiVercel,
+  SiFirebase,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaCss3Alt, FaNodeJs } from "react-icons/fa";
@@ -28,21 +33,25 @@ export const techStackList = [
   { tech: "TypeScript", icon: <SiTypescript /> },
   { tech: "JavaScript", icon: <SiJavascript /> },
   { tech: "Tailwind", icon: <SiTailwindcss /> },
-  { tech: "Sass", icon: <SiSass /> },
+  // { tech: "Sass", icon: <SiSass /> },
   { tech: "HTML", icon: <FaHtml5 /> },
   { tech: "CSS", icon: <FaCss3Alt /> },
   { tech: "Nodejs", icon: <FaNodeJs /> },
   { tech: "Express", icon: <SiExpress /> },
   { tech: "MongoDB", icon: <SiMongodb /> },
   { tech: "pnpm", icon: <SiPnpm /> },
-  { tech: "Python", icon: <SiPython /> },
+  // { tech: "Python", icon: <SiPython /> },
   { tech: "Vite", icon: <SiVite /> },
   { tech: "Adobe Photoshop", icon: <SiAdobephotoshop /> },
-  { tech: "Krita", icon: <SiKrita /> },
+  // { tech: "Krita", icon: <SiKrita /> },
   { tech: "Visual Studio", icon: <BiLogoVisualStudio /> },
-  { tech: "Csharp", icon: <PiFileCSharp /> },
-  { tech: "Django", icon: <SiDjango /> },
-  { tech: "PHP", icon: <SiPhp /> },
+  // { tech: "Csharp", icon: <PiFileCSharp /> },
+  // { tech: "Django", icon: <SiDjango /> },
+  { tech: "Figma", icon: <SiFigma /> },
+  { tech: "github", icon: <SiGithub /> },
+  { tech: "GoDaddy", icon: <SiGodaddy /> },
+  { tech: "Vercel", icon: <SiVercel /> },
+  { tech: "Firebase", icon: <SiFirebase /> },
 ];
 
 const techStackDetect = (tech: string) => {
