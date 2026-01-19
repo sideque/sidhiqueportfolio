@@ -53,14 +53,23 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className}`}>
         <ThemesProvider>
+
+          {/* 🔹 BACKGROUND (FIRST, BEHIND EVERYTHING) */}
+          <div className="fixed inset-0 -z-10 pointer-events-none">
+            <Blob />
+            <DarkGradient />
+          </div>
+
+          {/* 🔹 HEADER */}
           <Header />
-          <main>
+
+          {/* 🔹 PAGE CONTENT */}
+          <main className="relative z-10">
             {children}
             <Analytics />
             <SpeedInsights />
           </main>
-          <Blob />
-          <DarkGradient />
+
         </ThemesProvider>
       </body>
     </html>
