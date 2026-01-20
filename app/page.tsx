@@ -8,6 +8,7 @@ import LifeStatus from "@frontend/components/LifeStatus";
 import TiltedCard from "@app/components/TiltedCard/TiltedCard";
 import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
 import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";
+import RotatingText from "@app/components/RotatingText/RotatingText";
 import Contact from "@app/contact/page";
 import About from "./about/page";
 
@@ -26,8 +27,23 @@ const HomePage = async () => {
             <div className="relative z-10 w-full flex flex-col items-center xl:items-start gap-5 max-w-[600px] text-center xl:text-left">
               <LifeStatus status="Open to work" />
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-                I am <span className="text-primary">Sidhique</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold flex items-center gap-2">
+                <span>I am</span>
+                <RotatingText
+                  texts={[
+                    "Sidhique",
+                    "L"
+                  ]}
+                  mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg inline-block"
+                  staggerFrom="last"
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "-120%" }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-400">
