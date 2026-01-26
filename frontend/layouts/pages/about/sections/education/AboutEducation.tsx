@@ -6,6 +6,7 @@ import { Paragraph } from "@frontend/components/ui/Paragraph";
 import Grid from "@frontend/layouts/common/Grid";
 import Section from "@frontend/layouts/common/Section";
 import Magnet from "@app/components/Magnet/Magnet";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 import Link from "@node_modules/next/link";
 
 export default function AboutEducation() {
@@ -26,7 +27,21 @@ export default function AboutEducation() {
             />
           </div>
           <div className="gradeschool">
-            <SectionHeading name="grade school" />
+            <SectionHeading>
+              <ShinyText
+                text="grade school"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
+
             <Paragraph variant="wide">
               I began my education at{" "}
               <span className="text-primary font-semibold">
@@ -59,7 +74,20 @@ export default function AboutEducation() {
             />
           </div>
           <div className="highschool">
-            <SectionHeading name="High School" />
+            <SectionHeading>
+              <ShinyText
+                text="High School"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Paragraph variant="wide">
               I continued my high school education at{" "}
               <span className="text-primary font-semibold">Mambram HSS,</span>{" "}
@@ -147,7 +175,20 @@ export default function AboutEducation() {
             />
           </div>
           <div className="college">
-            <SectionHeading name="Institute" />
+            <SectionHeading>
+              <ShinyText
+                text="Institute"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Paragraph variant="wide">
               I am currently on my main learning journey at{" "}
               <span className="text-primary font-semibold">Brototype,</span>{" "}
@@ -182,7 +223,20 @@ export default function AboutEducation() {
         {/* CTA */}
         <div className="w-full h-full flex flex-col justify-center">
           <div>
-            <SectionHeading name="Seeking My Next Opportunity!" />
+            <SectionHeading>
+              <ShinyText
+                text="Seeking My Next Opportunity!"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Paragraph variant="wide">
               My journey so far has equipped me with the skills and mindset
               needed to take on new challenges, both personally and
@@ -195,12 +249,12 @@ export default function AboutEducation() {
             </Paragraph>
           </div>
           <Magnet padding={60} magnetStrength={6} speed={0.2}>
-          <Link
-            href="/contact"
-            className={`${buttonVariants({ variant: "default" })} ml-auto mt-10`}
-          >
-            Get in touch
-          </Link>
+            <Link
+              href="/contact"
+              className={`${buttonVariants({ variant: "default" })} ml-auto mt-10`}
+            >
+              Get in touch
+            </Link>
           </Magnet>
         </div>
       </Grid>

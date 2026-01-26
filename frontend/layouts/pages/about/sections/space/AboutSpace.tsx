@@ -2,6 +2,7 @@ import ImageCredits from "@frontend/components/ImageCredits";
 import SectionHeading from "@frontend/components/SectionHeading";
 import { Image } from "@frontend/components/ui/Image";
 import { Paragraph } from "@frontend/components/ui/Paragraph";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 import Section from "@frontend/layouts/common/Section";
 
 export default function AboutSpace() {
@@ -29,7 +30,20 @@ export default function AboutSpace() {
         className="hidden lg:block absolute bottom-[4%] right-[1%]"
       />
       <div className="space">
-        <SectionHeading name="Into the stars!" />
+        <SectionHeading>
+          <ShinyText
+            text="Into the stars!"
+            speed={2}
+            delay={0}
+            color="#b5b5b5"
+            shineColor="#ffffff"
+            spread={120}
+            direction="left"
+            yoyo={false}
+            pauseOnHover={false}
+            disabled={false}
+          />
+        </SectionHeading>
         <Paragraph className="lg:text-slate-400" variant="wide">
           I've always been curious about if humans are the only living beings in
           the universe. Eversince I was a child, I have so many questions. I

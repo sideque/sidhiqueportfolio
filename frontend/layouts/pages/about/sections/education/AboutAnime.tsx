@@ -3,6 +3,7 @@ import { Paragraph } from "@frontend/components/ui/Paragraph";
 import Section from "@frontend/layouts/common/Section";
 import Link from "@node_modules/next/link";
 import LoopingImage from "@frontend/components/LoopingImage";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 import { animeGifList } from "@frontend/ts/constants/anime-gif-list";
 
 export default function AboutAnime() {
@@ -10,7 +11,20 @@ export default function AboutAnime() {
     <Section className="flex flex-col lg:flex-row justify-center items-center lg:text-slate-300">
       <LoopingImage imageList={animeGifList} />
       <div className="anime">
-        <SectionHeading name="Anime だいすき！" />
+        <SectionHeading>
+          <ShinyText
+            text="Anime だいすき！"
+            speed={2}
+            delay={0}
+            color="#b5b5b5"
+            shineColor="#ffffff"
+            spread={120}
+            direction="left"
+            yoyo={false}
+            pauseOnHover={false}
+            disabled={false}
+          />
+        </SectionHeading>
         <Paragraph className="lg:text-slate-400" variant="wide">
           Anime is a significant part of my life and has strongly influenced my
           mindset and creativity. I’m mainly drawn to intense, story-driven

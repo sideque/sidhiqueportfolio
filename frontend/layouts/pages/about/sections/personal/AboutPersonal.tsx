@@ -5,6 +5,7 @@ import { Paragraph } from "@frontend/components/ui/Paragraph";
 import SectionHeading from "@frontend/components/SectionHeading";
 import { Image } from "@frontend/components/ui/Image";
 import GlareHover from "@app/components/GlareHover/GlareHover";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 
 const age = ageCalc("2004-07-15");
 
@@ -37,7 +38,21 @@ export default function AboutPersonal() {
         />
       </div>
       <div className="xl:col-span-2 personal">
-        <SectionHeading name="This is me" />
+          <SectionHeading>
+            <ShinyText
+              text="This is me"
+              speed={2}
+              delay={0}
+              color="#b5b5b5"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+            />
+          </SectionHeading>
+
         <Paragraph variant="wide">
           I am{" "}
           <span className="text-primary font-semibold">Aboobakkar Sidhque</span>

@@ -3,6 +3,7 @@ import SectionHeading from "@frontend/components/SectionHeading";
 import { Image } from "@frontend/components/ui/Image";
 import { Paragraph } from "@frontend/components/ui/Paragraph";
 import Section from "@frontend/layouts/common/Section";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 
 export default function ExpIntern() {
   return (
@@ -20,7 +21,20 @@ export default function ExpIntern() {
       </div>
 
       <div className="xl:col-span-2 order-1">
-        <SectionHeading name="Startup & Freelance Experience" />
+        <SectionHeading>
+          <ShinyText
+            text="Startup & Freelance Experience"
+            speed={2}
+            delay={0}
+            color="#b5b5b5"
+            shineColor="#ffffff"
+            spread={120}
+            direction="left"
+            yoyo={false}
+            pauseOnHover={false}
+            disabled={false}
+          />
+        </SectionHeading>
         <Paragraph variant="wide">
           I gained valuable{" "}
           <span className="text-primary font-semibold">

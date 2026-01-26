@@ -2,6 +2,7 @@ import ImageCredits from "@frontend/components/ImageCredits";
 import SectionHeading from "@frontend/components/SectionHeading";
 import { Image } from "@frontend/components/ui/Image";
 import { Paragraph } from "@frontend/components/ui/Paragraph";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 import Section from "@frontend/layouts/common/Section";
 
 export default function AboutProgramming() {
@@ -16,7 +17,20 @@ export default function AboutProgramming() {
         <ImageCredits name="Akhila" href="https://www.instagram.com/__akhila__t/" />
       </div>
       <div className="xl:order-first xl:col-span-2 programming">
-        <SectionHeading name="Programming" />
+        <SectionHeading>
+          <ShinyText
+            text="Programming"
+            speed={2}
+            delay={0}
+            color="#b5b5b5"
+            shineColor="#ffffff"
+            spread={120}
+            direction="left"
+            yoyo={false}
+            pauseOnHover={false}
+            disabled={false}
+          />
+        </SectionHeading>
         <Paragraph variant="wide">
           I started my journey without much clarity or direction, unsure of
           where I was headed in the world of programming. Through a{" "}

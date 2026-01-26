@@ -5,6 +5,7 @@ import Magnet from "@app/components/Magnet/Magnet";
 import Section from "@frontend/layouts/common/Section";
 import Footer from "@frontend/layouts/footer/Footer";
 import Link from "@node_modules/next/link";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 import Grid from "@frontend/layouts/common/Grid";
 
 import { SiAnilist, SiGmail } from "react-icons/si";
@@ -18,79 +19,107 @@ import {
   FaRedditAlien,
   FaDownload,
   FaSteam,
-  FaLinkedinIn
+  FaLinkedinIn,
 } from "react-icons/fa6";
-
 
 export default function ContactsPage() {
   return (
     <>
-  
       <PageWrapper id="contact">
         <Section className="w-max mx-auto space-y-12">
           {/* collaboration */}
           <div>
-            <SectionHeading
-              className="!text-3xl sm:!text-4xl"
-              name="Let's build from here!"
-            />
+            <SectionHeading className="!text-3xl sm:!text-4xl">
+              <ShinyText
+                text="Let's build from here!"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Grid className="w-max grid-cols-2 sm:grid-cols-3 gap-4">
               <Magnet padding={60} magnetStrength={6} speed={0.2}>
-              <Link
-                href="https://github.com/sideque"
-                target="_blank"
-                className={`${buttonVariants({ variant: "icon" })} bg-github text-white  hover:scale-110`}
-              >
-                <FaGithub />
-              </Link>
+                <Link
+                  href="https://github.com/sideque"
+                  target="_blank"
+                  className={`${buttonVariants({ variant: "icon" })} bg-github text-white  hover:scale-110`}
+                >
+                  <FaGithub />
+                </Link>
               </Magnet>
               <Magnet padding={60} magnetStrength={6} speed={0.2}>
-              <Link
-                href="mailto:xidhique@gmail.com"
-                target="_blank"
-                className={`${buttonVariants({ variant: "icon" })} bg-primary text-white  hover:scale-110`}
-              >
-                <SiGmail />
-              </Link>
+                <Link
+                  href="mailto:xidhique@gmail.com"
+                  target="_blank"
+                  className={`${buttonVariants({ variant: "icon" })} bg-primary text-white  hover:scale-110`}
+                >
+                  <SiGmail />
+                </Link>
               </Magnet>
             </Grid>
           </div>
 
           {/* professional */}
           <div>
-            <SectionHeading
-              className="!text-3xl md:!text-4xl"
-              name="Professional credentials"
-            />
+            <SectionHeading className="!text-3xl md:!text-4xl">
+              <ShinyText
+                text="Professional credentials"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Grid className="w-max grid-cols-1 sm:grid-cols-2 gap-4">
               <Magnet padding={60} magnetStrength={6} speed={0.2}>
-              <Link
-                href="/images/pages/about/SidhqiueCV1.pdf" //CV
-                download
-                target="_blank"
-                className={`${buttonVariants({ variant: "ghost" })} hover:scale-110`}
-              >
-                <FaDownload /> Resumé
-              </Link>
+                <Link
+                  href="/images/pages/about/SidhqiueCV1.pdf" //CV
+                  download
+                  target="_blank"
+                  className={`${buttonVariants({ variant: "ghost" })} hover:scale-110`}
+                >
+                  <FaDownload /> Resumé
+                </Link>
               </Magnet>
               <Magnet padding={60} magnetStrength={6} speed={0.2}>
-              <Link
-                href="https://www.linkedin.com/in/sidhiee"
-                target="_blank"
-                className={`${buttonVariants({ variant: "icon" })} bg-primary text-white  hover:scale-110`}
-              >
-                <FaLinkedinIn />
-              </Link>
+                <Link
+                  href="https://www.linkedin.com/in/sidhiee"
+                  target="_blank"
+                  className={`${buttonVariants({ variant: "icon" })} bg-primary text-white  hover:scale-110`}
+                >
+                  <FaLinkedinIn />
+                </Link>
               </Magnet>
             </Grid>
           </div>
 
           {/* socials */}
           <div>
-            <SectionHeading
-              className="!text-3xl sm:!text-4xl"
-              name="Let's Connect & Play"
-            />
+            <SectionHeading className="!text-3xl sm:!text-4xl">
+              <ShinyText
+                text="Let's Connect & Play"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Grid className="w-max grid-cols-2 sm:grid-cols-3 gap-4">
               {/* <Link
                 href="https://www.facebook.com/moonbamijam"
@@ -100,13 +129,13 @@ export default function ContactsPage() {
                 <FaFacebook />
               </Link> */}
               <Magnet padding={60} magnetStrength={6} speed={0.2}>
-              <Link
-                href="https://www.instagram.com/sidhiquee/"
-                target="_blank"
-                className={`${buttonVariants({ variant: "icon" })} bg-instagram-gradient text-white  hover:scale-110`}
-              >
-                <FaInstagram />
-              </Link>
+                <Link
+                  href="https://www.instagram.com/sidhiquee/"
+                  target="_blank"
+                  className={`${buttonVariants({ variant: "icon" })} bg-instagram-gradient text-white  hover:scale-110`}
+                >
+                  <FaInstagram />
+                </Link>
               </Magnet>
               {/* <Link
                 href="https://twitter.com/moonbamijam"
@@ -128,10 +157,20 @@ export default function ContactsPage() {
 
           {/* other ways to find */}
           <div>
-            <SectionHeading
-              className="!text-3xl sm:!text-4xl"
-              name="Explore my passions"
-            />
+            <SectionHeading className="!text-3xl sm:!text-4xl">
+              <ShinyText
+                text="Explore my passions"
+                speed={2}
+                delay={0}
+                color="#b5b5b5"
+                shineColor="#ffffff"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </SectionHeading>
             <Grid className="w-max grid-cols-2 sm:grid-cols-3 gap-4">
               {/* <Link
                 href="https://anilist.co/user/Moonbami/"
@@ -141,13 +180,13 @@ export default function ContactsPage() {
                 <SiAnilist />
               </Link> */}
               <Magnet padding={60} magnetStrength={6} speed={0.2}>
-              <Link
-                href="https://www.youtube.com/@sidhiQuee/"
-                target="_blank"
-                className={`${buttonVariants({ variant: "icon" })} bg-[#FF0000] text-white  hover:scale-110`}
-              >
-                <FaYoutube />
-              </Link>
+                <Link
+                  href="https://www.youtube.com/@sidhiQuee/"
+                  target="_blank"
+                  className={`${buttonVariants({ variant: "icon" })} bg-[#FF0000] text-white  hover:scale-110`}
+                >
+                  <FaYoutube />
+                </Link>
               </Magnet>
               {/* <Link
                 href="https://www.reddit.com/user/MoonbamiOfficial/"

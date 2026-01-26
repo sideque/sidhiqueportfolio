@@ -3,6 +3,7 @@ import { Paragraph } from "@frontend/components/ui/Paragraph";
 import Section from "@frontend/layouts/common/Section";
 import Link from "@node_modules/next/link";
 import LoopingImage from "@frontend/components/LoopingImage";
+import ShinyText from "@app/components/ShinyText/ShinyText";
 import { gameGifList } from "@frontend/ts/constants/game-gif-list";
 
 export default function AboutGame() {
@@ -10,7 +11,20 @@ export default function AboutGame() {
     <Section className="flex flex-col lg:flex-row justify-center items-center lg:text-slate-300">
       <LoopingImage imageList={gameGifList} />
       <div className="game">
-        <SectionHeading name="No Code, No Life!" />
+          <SectionHeading>
+            <ShinyText
+              text="No Code, No Life!"
+              speed={2}
+              delay={0}
+              color="#b5b5b5"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+            />
+          </SectionHeading>
         <Paragraph className="lg:text-slate-400" variant="wide">
           {/* Last but not the least, also a significant part of my life is none
           other than gaming. I have been playing video games since I was a
