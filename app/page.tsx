@@ -7,6 +7,7 @@ import TechStackSlider from "@frontend/layouts/TechStackSlider";
 import LifeStatus from "@frontend/components/LifeStatus";
 import TiltedCard from "@app/components/TiltedCard/TiltedCard";
 import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
+import ReflectiveCard from "@app/components/ReflectiveCard/ReflectiveCard";
 import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";
 import RotatingText from "@app/components/RotatingText/RotatingText";
 import Contact from "@app/contact/page";
@@ -30,10 +31,7 @@ const HomePage = async () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold flex items-center gap-2">
                 <span>I am</span>
                 <RotatingText
-                  texts={[
-                    "Sidhique",
-                    "L"
-                  ]}
+                  texts={["Sidhique", "L"]}
                   mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg inline-block"
                   staggerFrom="last"
                   initial={{ y: "100%" }}
@@ -61,17 +59,27 @@ const HomePage = async () => {
             </div>
 
             {/* IMAGE */}
-            <div className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] lg:max-w-[450px] aspect-square rounded-lg overflow-hidden">
-              <TiltedCard
-                imageSrc="/images/pages/about/Home.jpg"
-                altText="I am Sidhique"
-                containerWidth="100%"
-                containerHeight="100%"
-                imageWidth="100%"
-                imageHeight="100%"
-                rotateAmplitude={12}
-                scaleOnHover={1.1}
-              />
+            {/* IMAGE */}
+            <div className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] lg:max-w-[450px] aspect-square rounded-lg overflow-hidden lg:ml-auto">
+              <ReflectiveCard
+                overlayColor="rgba(0, 0, 0, 0.2)"
+                blurStrength={12}
+                glassDistortion={30}
+                metalness={1}
+                roughness={0.75}
+                displacementStrength={20}
+                noiseScale={1}
+                specularConstant={5}
+                grayscale={0.15}
+                color="#ffffff"
+                className="w-full h-full"
+              >
+                <img
+                  src="/images/pages/about/Home.jpg"
+                  alt="I am Sidhique"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </ReflectiveCard>
             </div>
           </div>
 
