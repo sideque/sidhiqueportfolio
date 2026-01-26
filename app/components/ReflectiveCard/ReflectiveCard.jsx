@@ -117,25 +117,25 @@ const ReflectiveCard = ({
 
       <div className="reflective-noise" />
       <div className="reflective-sheen" />
-      <div className="reflective-border" />
+      {/* <div className="reflective-border" /> */}
 
-      <div className="reflective-content">
+      {/* <div className="reflective-content">
         <div className="card-header">
           <div className="security-badge">
             <Lock size={14} className="security-icon" />
             <span>SECURE ACCESS</span>
           </div>
           <Activity className="status-icon" size={20} />
-        </div>
+        </div> */}
 
-        <div className="card-body">
+        {/* <div className="card-body">
           <div className="user-info">
             <h2 className="user-name">ALEXANDER DOE</h2>
             <p className="user-role">SENIOR DEVELOPER</p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="card-footer">
+        {/* <div className="card-footer">
           <div className="id-section">
             <span className="label">ID NUMBER</span>
             <span className="value">8901-2345-6789</span>
@@ -143,8 +143,8 @@ const ReflectiveCard = ({
           <div className="fingerprint-section">
             <Fingerprint size={32} className="fingerprint-icon" />
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 };
