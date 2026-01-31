@@ -59,7 +59,6 @@ const SeaTree = ({ left, height = 180, color = '#1aaa6a', sway = 12, delay = 0, 
             const endX = startX + s.endX * w;
             const endY = 0;
 
-            // slightly vary color per strand
             const hue = 150 + i * 10 - variant * 5;
             const sat = 60 + i * 5;
             const lit = 35 + i * 3;
@@ -77,7 +76,6 @@ const SeaTree = ({ left, height = 180, color = '#1aaa6a', sway = 12, delay = 0, 
               />
             );
           })}
-          {/* Small bulb at the tip of the tallest strand for realism */}
           <ellipse
             cx={w / 2 + (strands[0]?.endX || 0) * w}
             cy={4}
@@ -117,43 +115,24 @@ const FishSVG = () => (
    FISH – chases the mouse, swims when no mouse nearby
    ─────────────────────────────────────────────────────────────── */
 
-// Base sizes per fish index (px)
 const FISH_SIZES = [
-  { w: 60, h: 30 },
-  { w: 45, h: 22 },
-  { w: 70, h: 35 },
-  { w: 50, h: 25 },
-  { w: 55, h: 28 },
-  { w: 65, h: 32 },
-  { w: 58, h: 29 },
-  { w: 48, h: 24 },
-  { w: 62, h: 31 },
-  { w: 52, h: 26 },
-  { w: 42, h: 21 },
-  { w: 68, h: 34 },
-  { w: 47, h: 23 },
-  { w: 57, h: 28 },
-  { w: 63, h: 31 },
-  { w: 44, h: 22 },
-  { w: 53, h: 26 },
-  { w: 59, h: 29 },
-  { w: 46, h: 23 },
-  { w: 51, h: 25 },
+  { w: 60, h: 30 }, { w: 45, h: 22 }, { w: 70, h: 35 }, { w: 50, h: 25 },
+  { w: 55, h: 28 }, { w: 65, h: 32 }, { w: 58, h: 29 }, { w: 48, h: 24 },
+  { w: 62, h: 31 }, { w: 52, h: 26 }, { w: 42, h: 21 }, { w: 68, h: 34 },
+  { w: 47, h: 23 }, { w: 57, h: 28 }, { w: 63, h: 31 }, { w: 44, h: 22 },
+  { w: 53, h: 26 }, { w: 59, h: 29 }, { w: 46, h: 23 }, { w: 51, h: 25 },
 ];
 
-// Vertical lanes (%) – spread across the viewport
-const FISH_LANES = [8, 18, 28, 38, 48, 58, 68, 78, 88, 12, 22, 32, 42, 52, 62, 72, 82, 15, 45, 75];
+const FISH_LANES = [8,18,28,38,48,58,68,78,88,12,22,32,42,52,62,72,82,15,45,75];
+const BASE_SPEEDS = [90,75,110,85,95,100,88,78,105,92,80,115,87,98,102,82,94,108,86,96];
 
-// Base swim speed (px/s) – higher index = slightly faster variety
-const BASE_SPEEDS = [90, 75, 110, 85, 95, 100, 88, 78, 105, 92, 80, 115, 87, 98, 102, 82, 94, 108, 86, 96];
-
-const CHASE_RADIUS = 220; // px – how close the mouse must be to trigger chasing
-const CHASE_SPEED_MULT = 1.8; // how much faster they swim when chasing
+const CHASE_RADIUS = 220;
+const CHASE_SPEED_MULT = 1.8;
 
 const Fish = ({ index, mousePos }) => {
   const fishRef = useRef(null);
   const posRef = useRef({ x: -100, y: FISH_LANES[index % FISH_LANES.length] });
-  const velRef = useRef({ x: 1, y: 0 }); // normalised swim direction
+  const velRef = useRef({ x: 1, y: 0 });
   const chaseRef = useRef(false);
   const animRef = useRef(null);
   const lastTimeRef = useRef(performance.now());
@@ -162,12 +141,10 @@ const Fish = ({ index, mousePos }) => {
 
   const size = FISH_SIZES[index % FISH_SIZES.length];
   const baseSpeed = BASE_SPEEDS[index % BASE_SPEEDS.length];
-  // Stagger start so fish don't all appear at once
   const startDelay = (index * 1.3) % 8;
 
-  // Initial x – spread some off-screen left, some off-screen right
   useEffect(() => {
-    const startLeft = index % 3 !== 0; // most start from left
+    const startLeft = index % 3 !== 0;
     posRef.current = {
       x: startLeft ? -(size.w + 50) : window.innerWidth + size.w + 50,
       y: FISH_LANES[index % FISH_LANES.length],
@@ -175,11 +152,10 @@ const Fish = ({ index, mousePos }) => {
     velRef.current = { x: startLeft ? 1 : -1, y: 0 };
     setFacingLeft(!startLeft);
 
-    // delay the animation start
     const timer = setTimeout(() => {
       lastTimeRef.current = performance.now();
       const tick = (now) => {
-        const dt = Math.min((now - lastTimeRef.current) / 1000, 0.05); // cap dt
+        const dt = Math.min((now - lastTimeRef.current) / 1000, 0.05);
         lastTimeRef.current = now;
 
         const vw = window.innerWidth;
@@ -187,11 +163,9 @@ const Fish = ({ index, mousePos }) => {
         const pos = posRef.current;
         const vel = velRef.current;
 
-        // Resolve mouse position in pixels
         const mx = mousePos.current ? mousePos.current.x * vw : -9999;
         const my = mousePos.current ? mousePos.current.y * vh : -9999;
 
-        // Fish center
         const fx = pos.x + size.w / 2;
         const fy = (pos.y / 100) * vh + size.h / 2;
 
@@ -200,42 +174,29 @@ const Fish = ({ index, mousePos }) => {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         let speed = baseSpeed;
-        let targetVelX = vel.x; // keep current
+        let targetVelX = vel.x;
         let targetVelY = 0;
 
         if (dist < CHASE_RADIUS && dist > 0) {
           // Chase!
           chaseRef.current = true;
           speed = baseSpeed * CHASE_SPEED_MULT;
-          targetVelX = dx / dist;
-          targetVelY = dy / dist;
+          targetVelX = -dx / dist;
+          targetVelY = -dy / dist;
         } else {
           chaseRef.current = false;
-          // Resume normal swimming in current horizontal direction
           targetVelX = vel.x > 0 ? 1 : -1;
           targetVelY = 0;
-          // Gentle drift back toward its lane
-          const laneY = (FISH_LANES[index % FISH_LANES.length] / 100) * vh;
-          const currentY = pos.x; // we track y via pos.y percentage but move in px
-          // We'll nudge via targetVelY
-          const currentPxY = (pos.y / 100) * vh;
-          if (Math.abs(currentPxY - laneY) > 5) {
-            targetVelY = (laneY - currentPxY) > 0 ? 0.15 : -0.15;
-          }
         }
 
-        // Smooth velocity
         const smoothFactor = chaseRef.current ? 0.12 : 0.06;
         vel.x += (targetVelX - vel.x) * smoothFactor;
         vel.y += (targetVelY - vel.y) * smoothFactor;
 
-        // Move
         pos.x += vel.x * speed * dt;
-        // For y we need px movement
         const pxY = (pos.y / 100) * vh + vel.y * speed * dt;
         pos.y = (pxY / vh) * 100;
 
-        // Wrap: if fish exits, re-enter from opposite side at its lane
         if (pos.x > vw + size.w + 40) {
           pos.x = -(size.w + 40);
           pos.y = FISH_LANES[index % FISH_LANES.length];
@@ -248,12 +209,9 @@ const Fish = ({ index, mousePos }) => {
           vel.y = 0;
         }
 
-        // Clamp y to stay on screen with padding
         pos.y = Math.max(2, Math.min(92, pos.y));
 
-        // Facing direction
-        const goingLeft = vel.x < -0.05;
-        setFacingLeft(goingLeft);
+        setFacingLeft(vel.x < -0.05);
         setRenderPos({ x: pos.x, y: pos.y });
 
         animRef.current = requestAnimationFrame(tick);
@@ -265,7 +223,6 @@ const Fish = ({ index, mousePos }) => {
       clearTimeout(timer);
       if (animRef.current) cancelAnimationFrame(animRef.current);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -280,7 +237,7 @@ const Fish = ({ index, mousePos }) => {
         height: `${size.h}px`,
         transform: facingLeft ? 'scaleX(-1)' : 'scaleX(1)',
         transition: 'transform 0.3s ease',
-        animation: 'none', // disable CSS swim animation – we drive it via JS
+        animation: 'none',
         willChange: 'transform, left, top',
         filter: 'drop-shadow(0 0 8px rgba(0, 255, 255, 0.5))',
         pointerEvents: 'auto',
@@ -293,37 +250,10 @@ const Fish = ({ index, mousePos }) => {
   );
 };
 
-/* ───────────────────────────────────────────────────────────────
-   SEA TREE LAYOUT – scattered across the bottom
-   ─────────────────────────────────────────────────────────────── */
-// const SEA_TREES = [
-//   { left: 2,  height: 160, variant: 0, sway: -10, delay: 0 },
-//   { left: 6,  height: 200, variant: 2, sway: 14,  delay: 0.3 },
-//   { left: 10, height: 140, variant: 1, sway: -8,  delay: 0.6 },
-//   { left: 16, height: 190, variant: 0, sway: 11,  delay: 0.1 },
-//   { left: 21, height: 170, variant: 2, sway: -12, delay: 0.5 },
-//   { left: 27, height: 210, variant: 1, sway: 10,  delay: 0.8 },
-//   { left: 33, height: 150, variant: 0, sway: -9,  delay: 0.2 },
-//   { left: 38, height: 180, variant: 2, sway: 13,  delay: 0.4 },
-//   { left: 44, height: 195, variant: 1, sway: -11, delay: 0.7 },
-//   { left: 50, height: 165, variant: 0, sway: 12,  delay: 0.9 },
-//   { left: 56, height: 185, variant: 2, sway: -10, delay: 0.15 },
-//   { left: 62, height: 200, variant: 1, sway: 9,   delay: 0.35 },
-//   { left: 68, height: 155, variant: 0, sway: -13, delay: 0.55 },
-//   { left: 74, height: 175, variant: 2, sway: 11,  delay: 0.75 },
-//   { left: 80, height: 210, variant: 1, sway: -8,  delay: 0.95 },
-//   { left: 86, height: 145, variant: 0, sway: 10,  delay: 0.25 },
-//   { left: 92, height: 190, variant: 2, sway: -12, delay: 0.45 },
-//   { left: 96, height: 170, variant: 1, sway: 9,   delay: 0.65 },
-// ];
-
 const TOTAL_FISH = 20;
 
-/* ───────────────────────────────────────────────────────────────
-   MAIN CONTAINER
-   ─────────────────────────────────────────────────────────────── */
 const FishContainer = () => {
-  const mousePosRef = useRef({ x: -1, y: -1 }); // normalised 0-1, negative = no mouse
+  const mousePosRef = useRef({ x: -1, y: -1 });
 
   useEffect(() => {
     const onMove = (e) => {
@@ -345,12 +275,6 @@ const FishContainer = () => {
 
   return (
     <div className={styles.fishContainer} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
-      {/* Sea trees at the bottom */}
-      {/* {SEA_TREES.map((tree, i) => (
-        <SeaTree key={`tree-${i}`} {...tree} />
-      ))} */}
-
-      {/* Fish */}
       {Array.from({ length: TOTAL_FISH }, (_, i) => (
         <Fish key={`fish-${i}`} index={i} mousePos={mousePosRef} />
       ))}
