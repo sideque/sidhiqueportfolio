@@ -5,7 +5,7 @@
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=36BCF7FF&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=MERN+Stack+Developer+%F0%9F%9A%80;Building+Scalable+Web+Solutions+%F0%9F%92%BB;Clean+Code+%7C+Modern+Design+%E2%9C%A8" alt="Typing SVG" />
 
 <p align="center">
-  <a href="https://sidhiqueportfolio.vercel.app" target="_blank">
+  <a href="https://sidhiqueportfolio-iehe.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/🌐_Portfolio-Live-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/>
   </a>
   <a href="https://github.com/sideque/sidhiqueportfolio">
@@ -129,7 +129,7 @@ Built with cutting-edge technologies, this portfolio demonstrates:
 
 <div align="center">
 
-### 👉 **[Visit My Portfolio](https://sidhiqueportfolio.vercel.app)** 👈
+### 👉 **[Visit My Portfolio](https://sidhiqueportfolio-iehe.vercel.app/)** 👈
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDI4aWg3b3djdnRkajhyYzN0YmIzYnFyZXh5NGJkZHBwdWJ0ZnR3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Portfolio Demo"/>
 
@@ -320,20 +320,16 @@ This project is **open source** and available under the [MIT License](LICENSE).
 
 <div align="center">
 
-<a href="mailto:sidhique@example.com">
+<a href="mailto:xidhique@gamil.com">
   <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
 </a>
 
-<a href="https://linkedin.com/in/sidhique" target="_blank">
+<a href="https://www.linkedin.com/in/sidhiee/" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
 
 <a href="https://github.com/sideque" target="_blank">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-</a>
-
-<a href="https://twitter.com/sidhique" target="_blank">
-  <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
 </a>
 
 </div>
@@ -355,7 +351,7 @@ npm run lint
 ```
 
 ### **For Recruiters:**
-- 📍 Check the **[Live Demo](https://sidhiqueportfolio.vercel.app)** first
+- 📍 Check the **[Live Demo](https://sidhiqueportfolio-iehe.vercel.app/)** first
 - 💼 Review the **Projects Section** for technical depth
 - 📊 Examine **GitHub Stats** for activity metrics
 - 🎯 View **Tech Stack** for skills alignment
