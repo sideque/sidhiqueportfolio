@@ -5,7 +5,8 @@ import { Analytics } from "@vercel/analytics/next";
 import Header from "@frontend/layouts/header/Header";
 import ThemesProvider from "@frontend/providers/themesProvider";
 import Blob from "@frontend/components/bg/Blob";
-import SplashCursor from "@app/components/SplashCursor/SplashCursor"
+import SplashCursor from "@app/components/SplashCursor/SplashCursor";
+import BubbleCursor from "@app/components/BubbleCursor/BubbleCursor";
 import "@frontend/styles/globals.css";
 import DarkGradient from "@frontend/components/bg/DarkGradient";
 
@@ -53,7 +54,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className}`}>
-        <SplashCursor />
+        {/* <SplashCursor /> */}
+        <BubbleCursor />
         <ThemesProvider>
 
           {/* 🔹 BACKGROUND (FIRST, BEHIND EVERYTHING) */}

@@ -26,7 +26,7 @@ export default function AboutPersonal() {
             transitionDuration={2000}
           >
             <Image
-              src="/images/pages/about/about.jpeg"
+              src="/images/pages/about/about.PNG"
               alt="Sidhique"
               shape="tv"
             />

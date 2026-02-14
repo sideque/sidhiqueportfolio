@@ -59,9 +59,8 @@ const HomePage = async () => {
             </div>
 
             {/* IMAGE */}
-            {/* IMAGE */}
             <div className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] lg:max-w-[450px] aspect-square rounded-lg overflow-hidden lg:ml-auto">
-              <ReflectiveCard
+              {/* <ReflectiveCard
                 overlayColor="rgba(0, 0, 0, 0.2)"
                 blurStrength={12}
                 glassDistortion={30}
@@ -73,13 +72,13 @@ const HomePage = async () => {
                 grayscale={0.15}
                 color="#ffffff"
                 className="w-full h-full"
-              >
+              > */}
                 <img
-                  src="/images/pages/about/Home.jpg"
+                  src="/images/pages/about/Home2.jpg"
                   alt="I am Sidhique"
                   className="w-full h-full object-cover rounded-lg"
                 />
-              </ReflectiveCard>
+              {/* </ReflectiveCard> */}
             </div>
           </div>
 
