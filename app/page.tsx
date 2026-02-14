@@ -10,6 +10,7 @@ import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
 import ReflectiveCard from "@app/components/ReflectiveCard/ReflectiveCard";
 import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";
 import RotatingText from "@app/components/RotatingText/RotatingText";
+import GlareHover from "@app/components/GlareHover/GlareHover";
 import Contact from "@app/contact/page";
 import About from "./about/page";
 
@@ -73,11 +74,23 @@ const HomePage = async () => {
                 color="#ffffff"
                 className="w-full h-full"
               > */}
-                <img
-                  src="/images/pages/about/Home2.jpg"
-                  alt="I am Sidhique"
-                  className="w-full h-full object-cover rounded-lg"
-                />
+                <GlareHover
+            width="100%"
+            height="100%"
+            glareColor="#ffffff"
+            glareOpacity={0.5}
+            glareAngle={-50}
+            glareSize={350}
+            autoPlay={true}
+            playOnce={false}
+            transitionDuration={2000}
+          >
+            <img
+              src="/images/pages/about/Home2.jpg"
+              alt="Sidhique"
+              // shape="tv"
+            />
+          </GlareHover>
               {/* </ReflectiveCard> */}
             </div>
           </div>
