@@ -4,6 +4,7 @@ import Section from "@frontend/layouts/common/Section";
 import Link from "@node_modules/next/link";
 import LoopingImage from "@frontend/components/LoopingImage";
 import ShinyText from "@app/components/ShinyText/ShinyText";
+import FluidGlass from "@app/components/FluidGlass/FluidGlass";
 import { animeGifList } from "@frontend/ts/constants/anime-gif-list";
 
 export default function AboutAnime() {
@@ -11,6 +12,18 @@ export default function AboutAnime() {
     <Section className="flex flex-col lg:flex-row justify-center items-center lg:text-slate-300">
       <LoopingImage imageList={animeGifList} />
       <div className="anime">
+        {/* <FluidGlass
+          mode="lens"
+          lensProps={{
+            scale: 0.25,
+            ior: 1.15,
+            thickness: 5,
+            chromaticAberration: 0.1,
+            anisotropy: 0.01,
+          }}
+          barProps={{}}
+          cubeProps={{}}
+        /> */}
         <SectionHeading>
           <ShinyText
             text="Anime だいすき！"
@@ -32,17 +45,15 @@ export default function AboutAnime() {
           <span className="font-semibold text-primary">
             rather than romance.
           </span>{" "}
-          
-          Shows like Demon Slayer, Attack on Titan, Death Note, <span className="font-semibold text-primary">
-           Vinland Saga,
-          </span>{" "}
-          and One Punch Man inspire discipline, resilience, and critical
-          thinking.
+          Shows like Demon Slayer, Attack on Titan, Death Note,{" "}
+          <span className="font-semibold text-primary">Vinland Saga,</span> and
+          One Punch Man inspire discipline, resilience, and critical thinking.
           <br />
           <br />
           The way characters observe situations, adapt under pressure, and grow
           through challenges reflects how I approach problem-solving and
-          development. Anime, for me, is more than entertainment—it’s a source of perspective and motivation.
+          development. Anime, for me, is more than entertainment—it’s a source
+          of perspective and motivation.
           {/* You can check out my{" "}
           <Link
             href="https://anilist.co/user/Moonbami/"

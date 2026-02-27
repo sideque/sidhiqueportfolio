@@ -7,6 +7,7 @@ import ThemesProvider from "@frontend/providers/themesProvider";
 import Blob from "@frontend/components/bg/Blob";
 import SplashCursor from "@app/components/SplashCursor/SplashCursor";
 import BubbleCursor from "@app/components/BubbleCursor/BubbleCursor";
+import Creature from "@app/components/Creature/Creature";
 import "@frontend/styles/globals.css";
 import DarkGradient from "@frontend/components/bg/DarkGradient";
 
@@ -55,7 +56,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className}`}>
         {/* <SplashCursor /> */}
-        <BubbleCursor />
+        <BubbleCursor wrapperElement={undefined} />
+        <Creature />  
         <ThemesProvider>
 
           {/* 🔹 BACKGROUND (FIRST, BEHIND EVERYTHING) */}
