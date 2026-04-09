@@ -1,3 +1,5 @@
+"use client";
+
 import { Suspense } from "react";
 import EmailBtn from "@frontend/components/buttons/EmailBtn";
 import GitHubBtn from "@frontend/components/buttons/GitHubBtn";
@@ -6,6 +8,7 @@ import SkeletonScreenHome from "@frontend/components/skeleton-screens/SkeletonSc
 import TechStackSlider from "@frontend/layouts/TechStackSlider";
 import LifeStatus from "@frontend/components/LifeStatus";
 import TiltedCard from "@app/components/TiltedCard/TiltedCard";
+import Lanyard from "@app/components/Lanyard/Lanyard";
 import AnimatedRoleText from "@app/components/DecryptedText/AnimatedRoleText";
 import ReflectiveCard from "@app/components/ReflectiveCard/ReflectiveCard";
 import ScrollFloat from "@app/components/ScrollFloat/ScrollFloat";

@@ -17,6 +17,9 @@ importers:
       '@react-three/fiber':
         specifier: ^8.18.0
         version: 8.18.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)
+      '@react-three/rapier':
+        specifier: ^1.4.0
+        version: 1.5.0(@react-three/fiber@8.18.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(react@18.3.1)(three@0.182.0)
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.3.2(next@14.2.16(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -741,6 +744,9 @@ packages:
   '@dimforge/rapier3d-compat@0.12.0':
     resolution: {integrity: sha512-uekIGetywIgopfD97oDL5PfeezkFpNhwlzlaEYNOA0N6ghdsOvh/HYjSMek5Q2O1PYvRSDFcqFVJl4r4ZBwOow==}
 
+  '@dimforge/rapier3d-compat@0.14.0':
+    resolution: {integrity: sha512-/uHrUzS+CRQ+NQrrJCEDUkhwHlNsAAexbNXgbN9sHY+GwR+SFFAFrxRr8Llf5/AJZzqiLANdQIfJ63Cw4gJVqw==}
+
   '@ducanh2912/next-pwa@10.2.9':
     resolution: {integrity: sha512-Wtu823+0Ga1owqSu1I4HqKgeRYarduCCKwsh1EJmJiJqgbt+gvVf5cFwFH8NigxYyyEvriAro4hzm0pMSrXdRQ==}
     peerDependencies:
@@ -1041,6 +1047,13 @@ packages:
         optional: true
       react-native:
         optional: true
+
+  '@react-three/rapier@1.5.0':
+    resolution: {integrity: sha512-gylk2KyCer9EoymFyTyc+g2IqyAq4mTbZgaHoSJi6gHoXlJsC2LVeN4jedvegvjUsXPExdE60wHjCPa+DS4iXw==}
+    peerDependencies:
+      '@react-three/fiber': '>=8.9.0'
+      react: '>=18.0.0'
+      three: '>=0.139.0'
 
   '@release-it/conventional-changelog@8.0.2':
     resolution: {integrity: sha512-WpnWWRr7O0JeLoiejLrPEWnnwFhCscBn1wBTAXeitiz2/Ifaol0s+t8otf/HYq/OiQOri2iH8d0CnVb72tBdIQ==}
@@ -5259,6 +5272,8 @@ snapshots:
 
   '@dimforge/rapier3d-compat@0.12.0': {}
 
+  '@dimforge/rapier3d-compat@0.14.0': {}
+
   '@ducanh2912/next-pwa@10.2.9(next@14.2.16(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.96.1)':
     dependencies:
       fast-glob: 3.3.2
@@ -5572,6 +5587,15 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@react-three/rapier@1.5.0(@react-three/fiber@8.18.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(react@18.3.1)(three@0.182.0)':
+    dependencies:
+      '@dimforge/rapier3d-compat': 0.14.0
+      '@react-three/fiber': 8.18.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)
+      react: 18.3.1
+      suspend-react: 0.1.3(react@18.3.1)
+      three: 0.182.0
+      three-stdlib: 2.36.1(three@0.182.0)
 
   '@release-it/conventional-changelog@8.0.2(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.0.0)(release-it@17.10.0(typescript@5.6.3))':
     dependencies:
